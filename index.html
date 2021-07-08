@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="maze.js"></script>
+        <link rel="stylesheet" href="maze.css"></link>
+    </head>
+<body onload="init();">
+    <canvas id="maze" class="canvas" width=1000 height=600 onclick="maze.setGoblinTrap(this,event)"
+                                            ondblclick="maze.dropBomb(this,event)"
+                        `                   onauxclick="maze.setPortal(this,event)"
+                                            onmousemove="maze.moveGoblinDetector(this,event)"
+                                            onmouseout="maze.moveGoblinDetector(this,null)"></canvas>
+     </div>
+     <div class="controls">
+            <table><tr>
+                <td>
+                        <input type="button" value="Start first round" id="startbutton" onclick="maze.startWave()"/>
+                        <input type="button" value="Pause" onclick=";maze.displayMessage('game paused...',1);maze.stopWave()"/>            
+                        <div id="bombStatus">
+                            Bomb status:
+                            <canvas id="bombStatusLight" width="16" height="16"></canvas>
+                        </div>
+                </td>
+                <td>
+                        <textarea id="status"></textarea></div>
+                </td>
+                <td>
+                        <div id="hints" class="hints">
+                                Stop the ghastly ghostly goblins from stealing your treasure!<br>
+                                Left click to dig a trap. Click again to fill in the trap, killing any goblins inside.
+                        </div> 
+                </td>
+                <td>
+                        <img id="pointer" src="pics/arrow.gif"/>
+                </td>
+            </tr></table>
+        </div>
+        <div>    
+ </body>
+</html>

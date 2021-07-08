@@ -1,0 +1,54 @@
+.canvas {
+    cursor: crosshair;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    outline: black 2px solid;
+}
+
+.controls {
+    position: absolute;
+    bottom: 1%;
+    width: 90%;
+}
+
+td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+#bombStatus {
+    font-size: 11pt;
+    position: absolute;
+    bottom: 8%;
+    visibility: hidden;
+}
+
+#pointer {
+    visibility: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.hints {
+    color: rgb(29, 110, 13);
+}
+
+textarea {
+    margin-left: 10px;
+    height: 42px;
+    width:  240px;
+    vertical-align: bottom;
+    padding: 5px
+}
+
+input {
+    vertical-align: top;
+}
+
+.color {
+    color: rgb(35, 110, 35)
+}
