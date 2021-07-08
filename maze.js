@@ -594,8 +594,6 @@ function Maze(canvasObjectID,cellSize) {
         if(!(room.options & (GOBLIN_TRAP|TREASURE|PORTAL_ENTRANCE|PORTAL_EXIT))) {
      
             var goblinTrap = new Trap(cursorCell);
-            // trap has limited lifespan
-            setTimeout(function() {maze.destroyTrap(goblinTrap.ID)},this.trapLifetime);
             this.setCellOptions( cursorCell, GOBLIN_TRAP); // draw it on each animation cycle
             room.trapID = goblinTrap.ID;                    // link back to access entrapped goblins
             this.traps.set(goblinTrap.ID,goblinTrap);
@@ -796,6 +794,10 @@ function Maze(canvasObjectID,cellSize) {
                             theTrap.goblinsEntrapped.set(goblin.ID,goblin.ID);
                             goblin.stuckVoice();
                             goblinStopped = true;   
+                        }
+                        else {
+                            // free all the goblins
+                            this.destroyTrap(theTrap);
                         }
                     }
                 } 
